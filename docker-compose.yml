@@ -1,0 +1,45 @@
+version: '2'
+services:
+  php-app:
+    container_name: php-app
+    hostname: php-app
+    build:
+      context: ./php-app
+    ports: 
+      - 9000:80
+    networks:
+      - app_net
+
+  node-app:
+    container_name: node-app
+    hostname: node-app
+    build:
+      context: ./node-app
+    environment:
+      ROOT_PASSWORD: notes-api
+    ports: 
+      - 3000:3000
+    networks:
+      - app_net
+
+  nginx-app:
+    container_name: nginx-app
+    hostname: nginx-app
+    build:
+      context: ./nginx
+    ports:
+      - 80:80
+    networks:
+      - app_net
+
+  python-app:
+    container_name: python-app
+    hostname: python-app
+    build:
+      context: ./python-app
+    networks: 
+      - app_net
+
+networks:
+  app_net:
+    driver: bridge
