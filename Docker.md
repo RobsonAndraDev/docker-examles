@@ -34,7 +34,7 @@ exemplo de uso da instrução ENV: https://github.com/docker-library/openjdk/blo
 - build: Construi uma imagem;
 - ls: Lista as images;
 - tag: Cria uma tag para uma imagem;
-- rm: Remove uma imagem.
+- rm: Remove uma imagem.  
 **docker container <commnad>**:  
 - run: Executa um comando em um novo container;
 - start: Inicia containers parados;
